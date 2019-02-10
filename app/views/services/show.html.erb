@@ -1,0 +1,39 @@
+    <!-- Header -->
+    <header class="header-bar">
+      <div class="container">
+        <div>
+			&nbsp;
+        </div>
+      </div>
+    </header>
+	
+
+	<!-- Services -->
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase"><%= @service.service_type %></h2>
+            <h3 class="section-subheading text-muted"><%= @service.description %></h3>
+          </div>
+        </div>
+        <div class="row text-center">
+			<div>
+				<%= image_tag (@service.image), class:"img-responsive" %>
+			</div>
+		</div>
+		<div class="row text-center courses">
+			<% @courses.each do |c| %>
+			  <% if @service.service_type == 'Private Instruction' %>
+				<div class="col-md-4">	
+			  <% elsif @service.service_type == 'Studio Classes' %>
+			    <div class="col-md-12">
+			  <% else%>
+			    <div class="col-md-6">
+			  <% end %>
+					<h4 class="service-heading"><%= c.name %></h4>
+					<p><%= c.description %></p>
+				</div>
+			<% end %>
+        </div>
+    </section>	

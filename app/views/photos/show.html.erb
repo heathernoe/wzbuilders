@@ -1,0 +1,67 @@
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-lead-in">Welcome Photography Enthusiasts!</div>
+          <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">Explore More</a>
+        </div>
+      </div>
+    </header>
+	
+	<!-- Portfolio Grid -->
+    <section class="bg-light" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Portfolio</h2>
+            <h3 class="section-subheading text-muted">Dominica Wasilewska Fisher</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item">
+			<% @photos.each do |p| %>
+				<% if p.column == 1 %>
+					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+					  <div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+						  <i class="fa fa-plus fa-3x"></i>
+						</div>
+					  </div>
+					  <%= image_tag p.image, :class => "responsive project-img" %>
+					</a>
+				<% end %>
+			<% end %>
+          </div>
+		  <div class="col-md-4 col-sm-6 portfolio-item">
+			<% @photos.each do |p| %>
+				<% if p.column == 2 %>
+					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+					  <div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+						  <i class="fa fa-plus fa-3x"></i>
+						</div>
+					  </div>
+					  <%= image_tag p.image, :class => "responsive project-img"  %>
+					</a>
+				<% end %>
+			<% end %>
+          </div>
+		  <div class="col-md-4 col-sm-6 portfolio-item">
+			<% @photos.each do |p| %>
+				<% if p.column == 3 %>
+					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+					  <div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+						  <i class="fa fa-plus fa-3x"></i>
+						</div>
+					  </div>
+					  <%= image_tag p.image, :class => "responsive project-img"  %>
+					</a>
+				<% end %>
+			<% end %>
+          </div>
+			
+        </div>
+      </div>
+    </section>
