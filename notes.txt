@@ -1,0 +1,22 @@
+<a class="portfolio-link" href="#photoshow<%= p.id %>" onclick="renderPhoto<%=p.id%>()">
+
+
+set up services controller
+set up services view, sort of
+set up services route
+set up models
+ran migration
+seeded
+updated services controller
+need to update view with:
+
+<% @services.each do |s| %>	
+			  <div class="col-md-4">
+				<span class="fa-stack fa-4x">
+				  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+				  <i class="fas <%= s.icon %> fa-stack-1x fa-inverse"></i>
+				</span>
+				<h4 class="service-heading"><%= s.service_type %></h4>
+				<p class="text-muted"><%= s.description %><br><a href="#">Learn More</a></p>
+			  </div>
+		  <% end %>
